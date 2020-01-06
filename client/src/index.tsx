@@ -6,12 +6,15 @@ import * as serviceWorker from "./serviceWorker";
 import theme from "./theme";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { IntlProvider } from "react-intl";
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>,
+  <IntlProvider locale="en" key="en">
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </IntlProvider>,
   document.getElementById("root")
 );
 

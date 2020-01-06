@@ -7,6 +7,7 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 import Link from "@material-ui/core/Link";
 import { Link as RouterLink } from "react-router-dom";
+import { routePaths } from "./routes/routes";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -27,11 +28,11 @@ const TopNavigation: React.FC = () => {
     <AppBar position="sticky">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          <Link component={RouterLink} color="inherit" to="/">
+          <Link component={RouterLink} color="inherit" to={routePaths.home}>
             Buy More Shit
           </Link>
         </Typography>
-        <Link component={RouterLink} color="inherit" to="/create">
+        <Link component={RouterLink} color="inherit" to={routePaths.create}>
           <IconButton color="inherit">
             <AddIcon />
           </IconButton>

@@ -4,16 +4,19 @@ import { RouteConfig } from "react-router-config";
 const Home = React.lazy(() => import("./Home"));
 const Create = React.lazy(() => import("./Create"));
 
-const routes: RouteConfig[] = [
+export const routePaths = {
+  home: "/",
+  create: "/create"
+};
+
+export const routeCofigs: RouteConfig[] = [
   {
-    path: "/",
+    path: routePaths.home,
     component: Home,
     exact: true
   },
   {
-    path: "/create",
+    path: routePaths.create,
     component: Create
   }
 ];
-
-export default routes;
