@@ -6,6 +6,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { routeCofigs } from "./routes/routes";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import { Container } from "@material-ui/core";
 
 const fallback = <LinearProgress />;
 
@@ -14,7 +15,9 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Suspense fallback={fallback}>
         <TopNavigation />
-        <Switch>{renderRoutes(routeCofigs)}</Switch>
+        <Container component="main">
+          <Switch>{renderRoutes(routeCofigs)}</Switch>
+        </Container>
       </Suspense>
     </BrowserRouter>
   );
