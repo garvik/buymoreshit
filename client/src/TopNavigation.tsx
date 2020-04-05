@@ -11,14 +11,14 @@ import { routePaths } from "./routes/routes";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 const TopNavigation: React.FC = () => {

@@ -12,30 +12,28 @@ type CreatePage = {
 
 setLocale({
   mixed: {
-    required: ({ label }): string => `${label} is required`
-  }
+    required: ({ label }): string => `${label} is required`,
+  },
 });
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 const createPageSchema = object<CreatePage>({
-  name: string()
-    .required()
-    .label("Name")
+  name: string().required().label("Name"),
 });
 
 const Create: React.FC = () => {
@@ -43,7 +41,7 @@ const Create: React.FC = () => {
   const { register, errors, handleSubmit } = useForm<CreatePage>({
     mode: "onChange",
     reValidateMode: "onChange",
-    validationSchema: createPageSchema
+    validationSchema: createPageSchema,
   });
 
   const onSubmit: OnSubmit<CreatePage> = (data: CreatePage, e) => {

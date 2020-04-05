@@ -6,17 +6,17 @@ const Create = React.lazy(() => import("./Create"));
 
 export const routePaths = {
   home: "/",
-  create: "/create"
+  create: "/create",
 };
 
 export const routeCofigs: RouteConfig[] = [
   {
     path: routePaths.home,
     component: Home,
-    exact: true
+    exact: true,
   },
   {
     path: routePaths.create,
-    component: Create
-  }
+    component: Create,
+  },
 ];
